@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { Layout } from '../components/Layout'
 import styles from '../styles/Home.module.css'
 
-const Home: React.FC = () => {
+const BlogPage: React.FC = () => {
   return (
-    <Layout>
-      <p className="text-4xl">Welcome to Next.js</p>
+    <Layout title="Blog">
+      <p className="text-4xl">Welcome to Blog</p>
     </Layout>
   )
 }
-export default Home
+export default BlogPage

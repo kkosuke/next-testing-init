@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { Layout } from '../components/Layout'
 import styles from '../styles/Home.module.css'
 
-const Home: React.FC = () => {
+const CommentPage: React.FC = () => {
   return (
-    <Layout>
-      <p className="text-4xl">Welcome to Next.js</p>
+    <Layout title="Comment">
+      <p className="text-4xl">Welcome to Comment</p>
     </Layout>
   )
 }
-export default Home
+export default CommentPage
