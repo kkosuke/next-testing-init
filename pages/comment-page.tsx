@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 const CommentPage: React.FC = () => {
   return (
     <Layout title="Comment">
-      <p className="text-4xl">Welcome to Comment</p>
+      <p className="text-4xl">comment page</p>
     </Layout>
   )
 }

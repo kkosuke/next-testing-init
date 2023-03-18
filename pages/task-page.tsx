@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 const TaskPage: React.FC = () => {
   return (
     <Layout title="Context">
-      <p className="text-4xl">Welcome to Task</p>
+      <p className="text-4xl">task page</p>
     </Layout>
   )
 }

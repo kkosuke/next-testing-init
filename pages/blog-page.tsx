@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 const BlogPage: React.FC = () => {
   return (
     <Layout title="Blog">
-      <p className="text-4xl">Welcome to Blog</p>
+      <p className="text-4xl">blog page</p>
     </Layout>
   )
 }
