@@ -1,4 +1,4 @@
-import { Layout } from '../components/Layout'
+import Layout from '../components/Layout'
 import { getAllPostsData } from '../lib/fetch'
 import Post from '../components/Post'
 import { GetStaticProps } from 'next'

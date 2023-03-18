@@ -7,7 +7,7 @@ interface TITLE {
   title: string
 }
 
-export const Layout: React.RC<TITLE> = ({ children, title = 'Next.js' }) => {
+const Layout: React.FC<TITLE> = ({ children, title = 'Nextjs' }) => {
   return (
     <div className="flex justify-center items-center flex-col min-h-screen font-mono">
       <Head>
@@ -79,3 +79,5 @@ export const Layout: React.RC<TITLE> = ({ children, title = 'Next.js' }) => {
     </div>
   )
 }
+
+export default Layout
