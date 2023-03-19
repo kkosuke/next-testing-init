@@ -3,10 +3,9 @@
 - https://www.udemy.com/course/nextjs-react-testing-library-react/
 - https://github.com/GomaGoma676/nextjs-testing
 
+## Project setup : Nextjs+React-testing-library+TypeScript+Tailwind CSS
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Project setup : Nextjs+React-testing-library+TypeScript+Tailwind CSS
 
 ## 1. Nextjs Project 新規作成
 ### 1-1.  create-next-app
