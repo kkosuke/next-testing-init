@@ -1,13 +1,30 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Layout from '../components/Layout'
-import styles from '../styles/Home.module.css'
+import Layout from '../components/Layout';
+// CSRでは以下の2つを使う
+import useSWR from 'swr';
+import axios from 'axios';
+// 作ったものを呼び出す
+import Comment from '../components/Comment';
+import { COMMENT } from '../types/Types';
+
+const axiosFetcher = async () => {
+  const result = await axios.get<COMMENT[]>(
+    'https://jsonplaceholder.typicode.com/comments/?_limit=10'
+  );
+  return result.data;
+};
 
 const CommentPage: React.FC = () => {
+  const { data: comments, error } = useSWR('commentsFetch', axiosFetcher);
+  if (error) return <span>Error!</span>;
+
   return (
     <Layout title="Comment">
-      <p className="text-4xl">comment page</p>
+      <p className="text-4xl m-10">comment page</p>
+      <ul>
+        {comments &&
+          comments.map((comment) => <Comment key={comment.id} {...comment} />)}
+      </ul>
     </Layout>
-  )
-}
-export default CommentPage
+  );
+};
+export default CommentPage;
