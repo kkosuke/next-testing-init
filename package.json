@@ -9,6 +9,9 @@
     "lint": "next lint",
     "test": "jest --env=jsdom --verbose"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "axios": "^0.21.1",
@@ -46,8 +49,5 @@
     "moduleNameMapper": {
       "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
     }
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
