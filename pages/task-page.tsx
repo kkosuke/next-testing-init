@@ -1,13 +1,49 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Layout from '../components/Layout'
-import styles from '../styles/Home.module.css'
+import Layout from '../components/Layout';
+import { GetStaticProps } from 'next';
+import { getAllTasksData } from '../lib/fetch';
+import useSWR from 'swr';
+import axios from 'axios';
+import { TASK } from '../types/Types';
 
-const TaskPage: React.FC = () => {
-  return (
-    <Layout title="Context">
-      <p className="text-4xl">task page</p>
-    </Layout>
-  )
+interface STATICPROPS {
+  staticTasks: TASK[];
 }
-export default TaskPage
+
+const TaskPage: React.FC<STATICPROPS> = ({ staticTasks }) => {
+  const { data: tasks, error } = useSWR('todosFetch', axiosFetcher, {
+    fallbackData: staticTasks,
+    // pageがマウントされた場合、最新の値をserverから取得する場合は、trueにする。
+    revalidateOnMount: true,
+  });
+  if (error) return <span>Error!</span>;
+  return (
+    <Layout title="Todos">
+      <p className="mb-10 text-4xl">todos page</p>
+      <ul>
+        {tasks &&
+          tasks.map((task) => (
+            <li key={task.id}>
+              {task.id}
+              {': '}
+              <span>{task.title}</span>
+            </li>
+          ))}
+      </ul>
+    </Layout>
+  );
+};
+export default TaskPage;
+
+const axiosFetcher = async () => {
+  const result = await axios.get<TASK[]>(
+    'https://jsonplaceholder.typicode.com/todos/?_limit=10'
+  );
+  return result.data;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const staticTasks = await getAllTasksData();
+  return {
+    props: { staticTasks },
+  };
+};
