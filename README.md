@@ -13,6 +13,9 @@
 ```
 - https://stackoverflow.com/questions/74797727/error-error0308010cdigital-envelope-routinesunsupported
 
+## vercel
+settings > general の buildコマンドを `npm run test && npm run build` にする
+
 ## Project setup : Nextjs+React-testing-library+TypeScript+Tailwind CSS
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
