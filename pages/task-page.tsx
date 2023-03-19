@@ -15,7 +15,7 @@ const TaskPage: React.FC<STATICPROPS> = ({ staticTasks }) => {
     // pageがマウントされた場合、最新の値をserverから取得する場合は、trueにする。
     revalidateOnMount: true,
   });
-  if (error) return <span>Errror!</span>;
+  if (error) return <span>Error!</span>;
   return (
     <Layout title="Todos">
       <p className="mb-10 text-4xl">todos page</p>
