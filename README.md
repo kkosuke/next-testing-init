@@ -3,6 +3,16 @@
 - https://www.udemy.com/course/nextjs-react-testing-library-react/
 - https://github.com/GomaGoma676/nextjs-testing
 
+## 見本のままでは vercelにupできなかった。
+以下を追加する
+
+```package.json
+  "engines": {
+    "node": "16.x"
+  },
+```
+- https://stackoverflow.com/questions/74797727/error-error0308010cdigital-envelope-routinesunsupported
+
 ## Project setup : Nextjs+React-testing-library+TypeScript+Tailwind CSS
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
